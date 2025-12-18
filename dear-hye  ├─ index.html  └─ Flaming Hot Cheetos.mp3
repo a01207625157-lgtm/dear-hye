@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Dear Hye 💌</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #cfead9, #ffe1ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* BACKGROUND HOA + LÁ */
+.flowers-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, #ffd6e0 6%, transparent 7%),
+    radial-gradient(circle at 80% 25%, #b7e4c7 6%, transparent 7%),
+    radial-gradient(circle at 30% 75%, #ffe5ec 6%, transparent 7%),
+    radial-gradient(circle at 70% 85%, #cdeac0 6%, transparent 7%);
+  opacity: 0.75;
+}
+
+/* HOA RƠI */
+.falling {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh) rotate(0deg); }
+  to   { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* BAO THƯ */
+.envelope {
+  width: 420px;
+  height: 290px;
+  background: #ffffff;
+  border-radius: 18px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 24px 45px rgba(0,0,0,0.22);
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.envelope:hover {
+  transform: scale(1.04);
+}
+
+/* NẮP THƯ */
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #ffe5ec;
+  clip-path: polygon(0 0, 100% 0, 50% 62%);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 3;
+}
+
+/* TRÁI TIM */
+.heart {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #ff8fab;
+  z-index: 4;
+  transition: opacity 0.5s ease;
+}
+
+/* THƯ */
+.letter {
+  position: absolute;
+  inset: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease;
+  overflow-y: auto;
+  font-size: 15.8px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* SCROLLBAR */
+.letter::-webkit-scrollbar {
+  width: 6px;
+}
+.letter::-webkit-scrollbar-thumb {
+  background: #ffd6e0;
+  border-radius: 10px;
+}
+
+/* MỞ THƯ */
+.open .flap {
+  transform: rotateX(180deg);
+}
+.open .letter {
+  opacity: 1;
+  transform: translateY(0);
+}
+.open .heart {
+  opacity: 0;
+}
+
+.hint {
+  position: absolute;
+  bottom: 32px;
+  font-size: 14px;
+  color: #555;
+  z-index: 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="flowers-bg"></div>
+
+<!-- HOA RƠI -->
+<script>
+for (let i = 0; i < 28; i++) {
+  const f = document.createElement('div');
+  f.className = 'falling';
+  f.style.left = Math.random() * 100 + 'vw';
+  f.style.animationDuration = 6 + Math.random() * 6 + 's';
+  f.style.opacity = Math.random();
+  f.style.background = Math.random() > 0.5 ? '#ffcad4' : '#b7e4c7';
+  document.body.appendChild(f);
+}
+</script>
+
+<!-- NHẠC LOCAL -->
+<audio id="bgm" loop preload="auto">
+  <source src="Flaming Hot Cheetos.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" onclick="openLetter()">
+  <div class="flap"></div>
+  <div class="heart">💗</div>
+
+  <div class="letter">
+dear hye
+giáng sinh vui vẻ ạ !!! có thể chắc giờ hye đang uống ít thảo dược nhỉ? zian làm cái này từ mấy hôm trước và có một điều là zian cũng phải nhờ tới con AI ạ mặc dù zian biết hye ghét bọn nó nhưng mà zian mượn tạm tí vì zian hong biết phải làm như nào so ri sori
+
+cảm ơn hye thời gian qua đã cùng zian chơi game, nói chuyện linh tinh giúp zian cảm thấy không có một mình. hye có bảo nếu đợt đó không mở mic chắc sẽ không gặp zian, mà zian cũng tự hỏi nếu zian không bắt chuyện với hye thì bọn mình có được như nay không nhỉ? không biết nữa, có thể là từ sự cố gắng của cả 2 bọn mình
+
+zian rất vui khi được hye quan tâm, ziam cảm thấy mình được xem trọng dù là bình thường zian cứ nói linh tinh, lảm nhảm nhưng hye vẫn nghe vẫn trả lời làm zian cảm thấy mình được lắng nghe healing zian rất nhiều
+
+mong mọi thứ vẫn sẽ như này hoặc hơn. zian thương hye lắm, không biết hye nghĩ gì về zian nên đôi lúc zian cũng không dám nghĩ xa. nhưng nếu được, zian ước gì bọn mình sẽ luôn cùng nhau và thật tuyệt nếu ai đó nhắc đến 1 trong 2 đứa sẽ luôn nhớ đến tên người còn lại ( tệp đính kèm cuti )
+  </div>
+</div>
+
+<div class="hint">💌 bấm vào phong thư nhé</div>
+
+<script>
+function openLetter() {
+  const env = document.querySelector(".envelope");
+  const music = document.getElementById("bgm");
+
+  env.classList.add("open");
+
+  music.volume = 0;
+  music.play();
+
+  let v = 0;
+  const fade = setInterval(() => {
+    v += 0.02;
+    if (v >= 0.45) {
+      clearInterval(fade);
+      v = 0.45;
+    }
+    music.volume = v;
+  }, 120);
+}
+</script>
